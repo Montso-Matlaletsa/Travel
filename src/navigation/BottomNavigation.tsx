@@ -18,6 +18,7 @@ const Tab = createBottomTabNavigator<BottomTabs>();
 function MyTabs() {
   return (
     <Tab.Navigator  screenOptions={({ route }) => ({
+        headerShown: false,
         tabBarStyle: {borderTopLeftRadius: 60} ,
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
