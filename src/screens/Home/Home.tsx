@@ -1,90 +1,96 @@
-import { View, Text, Image } from 'react-native'
-import React, { useState } from 'react'
-import { styles } from './style'
-import { Ionicons } from '@expo/vector-icons'
-import Categories from '../../components/Category'
-import ShowPlaces from '../../components/ShowPlaces'
-
+import { View, Text, Image } from "react-native";
+import React, { useState } from "react";
+import { styles } from "./style";
+import { Ionicons } from "@expo/vector-icons";
+import Categories from "../../components/Category";
+import ShowPlaces from "../../components/ShowPlaces";
+import { IPlaceProps } from "../../@types/types";
 
 export default function Home() {
+  const categories = [
+    {
+      name: "All",
+      id: 3,
+    },
+    {
+      name: "Destinations",
+      id: 4,
+    },
+    {
+      name: "Cities",
+      id: 2,
+    },
+    {
+      name: "Experiences",
+      id: 0,
+    },
+  ];
 
-    const categories =[
-        {
-            name: 'All',
-            id: 3
-        },
-        {
-            name: 'Destinations',
-            id: 4
-        },{
-            name: 'Cities',
-            id: 2
-        },
-        {
-            name: 'Experiences',
-            id: 0
-        }
-    ]
-
-    const places = [
-      {
-        id: 0,
-        name: "Kome caves",
-        country: "Lesotho",
-        category: "Destinations",
-        image: "../../../assets/places/2.png"
-      },
-      {
-        id: 1,
-        name: "table Mountain",
-        country: "South Africa",
-        category: "Experiences",
-        image: "../../../assets/places/1.png"
-      },
-      {
-        id: 3,
-        name: "Sehlabathebe National Park",
-        country: "Lesotho",
-        category: "Experiences",
-        image: "../../../assets/places/4.jpeg"
-      },
-      {
-        id: 4,
-        name: "UShaka Marine World",
-        country: "South Africa",
-        category: "Experiences",
-        image: "../../../assets/places/5.jpeg"
-      },
-      {
-        id: 5,
-        name: "Mount Royal",
-        country: "Lesotho",
-        category: "Cities",
-        image: "../../../assets/places/6.jpeg"
-      },
-      {
-        id: 6,
-        name: "Honolulu Game resort",
-        country: "Hawaii",
-        category: "Destination",
-        image: "../../../assets/places/7.jpeg"
-      }
-    ]
-    const [selectedValue, setSelectedValue] = useState<string>('All')
+  const places: IPlaceProps[] = [
+    {
+      id: 0,
+      name: "Kome caves",
+      country: "Lesotho",
+      category: "Destinations",
+      image: require("../../../assets/places/1.png"),
+    },
+    {
+      id: 1,
+      name: "table Mountain",
+      country: "South Africa",
+      category: "Experiences",
+      image: require("../../../assets/places/1.png"),
+    },
+    {
+      id: 3,
+      name: "Sehlabathebe National Park",
+      country: "Lesotho",
+      category: "Experiences",
+      image: require("../../../assets/places/4.jpeg"),
+    },
+    {
+      id: 4,
+      name: "UShaka Marine World",
+      country: "South Africa",
+      category: "Experiences",
+      image: require("../../../assets/places/5.jpeg"),
+    },
+    {
+      id: 5,
+      name: "Mount Royal",
+      country: "Lesotho",
+      category: "Cities",
+      image: require("../../../assets/places/6.jpeg"),
+    },
+    {
+      id: 6,
+      name: "Honolulu Game resort",
+      country: "Hawaii",
+      category: "Destination",
+      image: require("../../../assets/places/7.jpeg"),
+    },
+  ];
+  const [selectedValue, setSelectedValue] = useState<string>("All");
   return (
     <View style={styles.container}>
       <View style={styles.topBar}>
-          <Ionicons name='ios-menu-outline' size={40}  style={styles.icon}/>
-          <Image source={require('../../../assets/1.png')} style={styles.profileImage} />
-          
+        <Ionicons name="ios-menu-outline" size={40} style={styles.icon} />
+        <Image
+          source={require("../../../assets/1.png")}
+          style={styles.profileImage}
+        />
       </View>
 
       <Text style={styles.title}>Discover</Text>
-      <Categories categories={categories}  selectedValue={selectedValue} setSelectedValue={setSelectedValue} >
+      <Categories
+        categories={categories}
+        selectedValue={selectedValue}
+        setSelectedValue={setSelectedValue}
+      >
+        {/* @ts-ignore */}
         <ShowPlaces places={places} category={selectedValue} />
       </Categories>
-              
-     <Text>Regina Hall</Text>
+      <Text></Text>
     </View>
-  )
+  );
 }

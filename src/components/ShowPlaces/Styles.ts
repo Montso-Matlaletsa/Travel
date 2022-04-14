@@ -8,7 +8,6 @@ export const styles = StyleSheet.create({
         width: 200,
         height: 300,
         marginRight: 20,
-        borderRadius: 20,
         justifyContent: 'flex-end',
         padding: 10,
         

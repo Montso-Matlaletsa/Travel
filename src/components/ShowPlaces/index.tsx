@@ -1,3 +1,3 @@
-import { ShowPlaces } from "./ShowCategories";
+import { ShowPlaces } from "./ShowPlaces";
 
 export default ShowPlaces
