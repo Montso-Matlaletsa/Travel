@@ -1,4 +1,4 @@
-import { Activity, Place } from "./src/@types/types";
+import { Activity, image, Place } from "./src/@types/types";
 
 
 export const categories = [
@@ -92,3 +92,18 @@ export const categories = [
         id: 4
     }
   ]
+
+  export const MoreImages:image[] = [
+    {
+      id: 0,
+      image: require("./assets/more/australia.png"),
+    },
+    {
+        id: 1,
+        image: require("./assets/more/beach.png"),
+      },
+      {
+        id: 2,
+        image: require("./assets/more/boatbeach.png"),
+      },
+]

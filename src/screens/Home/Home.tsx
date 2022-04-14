@@ -6,6 +6,7 @@ import Categories from "../../components/Category";
 import ShowPlaces from "../../components/ShowPlaces";
 import { ActivityList, categories, places } from "../../../Data";
 import Activities from "../../components/Activities";
+import More from "../../components/More";
 
 export default function Home() {
   const [selectedValue, setSelectedValue] = useState<string>("All");
@@ -34,6 +35,8 @@ export default function Home() {
 
         <Activities activities={ActivityList} />
         <Text style={styles.title}>Learn More</Text>
+
+        <More />
       </ScrollView>
     </View>
   );

@@ -35,3 +35,8 @@ export type BottomTabs = {
       image: string;
       title: string;
   }
+
+  export type image={
+      id: number,
+      image: string
+  }
