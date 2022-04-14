@@ -1,4 +1,4 @@
-import { Place } from "./src/@types/types";
+import { Activity, Place } from "./src/@types/types";
 
 
 export const categories = [
@@ -64,3 +64,31 @@ export const categories = [
       image: require("./assets/places/7.jpeg"),
     },
   ];
+
+  export const ActivityList:Activity[] = [
+      {
+          title: 'Hike',
+          image: require("./assets/icons/Vector-1.png"),
+          id: 0
+      },
+      {
+        title: 'Water Ski',
+        image: require("./assets/icons/Vector-2.png"),
+        id: 1
+    },
+    {
+        title: 'Spa',
+        image: require("./assets/icons/Vector-3.png"),
+        id: 2
+    },
+    {
+        title: 'tennis',
+        image: require("./assets/icons/Vector-4.png"),
+        id: 3
+    }
+    ,{
+        title: 'kayak',
+        image: require("./assets/icons/Vector.png"),
+        id: 4
+    }
+  ]

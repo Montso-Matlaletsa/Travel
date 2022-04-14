@@ -29,3 +29,9 @@ export type BottomTabs = {
     CITIES: "Cities",
     EXPERIENCES: "Experiences"
   }
+
+  export type Activity={
+      id: number;
+      image: string;
+      title: string;
+  }

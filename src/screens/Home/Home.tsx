@@ -5,6 +5,7 @@ import { Ionicons } from "@expo/vector-icons";
 import Categories from "../../components/Category";
 import ShowPlaces from "../../components/ShowPlaces";
 import { categories, places } from "../../../Data";
+import Activities from "../../components/Activities";
 
 export default function Home() {
   const [selectedValue, setSelectedValue] = useState<string>("All");
@@ -27,6 +28,9 @@ export default function Home() {
         {/* @ts-ignore */}
         <ShowPlaces places={places} category={selectedValue} />
       </Categories>
+
+      <Text style={styles.title}>Activities</Text>
+      <Activities />
     </View>
   );
 }

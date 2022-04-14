@@ -19,13 +19,13 @@ export const ShowPlaces: FC<ISHowPlaces> = ({ places, category }) => {
 
   const cities = places.filter((place) => place.category === Categories.CITIES);
   return (
-    <ScrollView horizontal={true}>
+    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
       {category === Categories.All
         ? places.map((place) => (
             <PlaceImageBackground place={place} key={place.id} />
           ))
         : category === Categories.DESTINATIONS
-        ? destinations.map((place, index) => (
+        ? destinations.map((place) => (
             <PlaceImageBackground place={place} key={place.id} />
           ))
         : category === Categories.CITIES
