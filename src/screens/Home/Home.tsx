@@ -4,72 +4,9 @@ import { styles } from "./style";
 import { Ionicons } from "@expo/vector-icons";
 import Categories from "../../components/Category";
 import ShowPlaces from "../../components/ShowPlaces";
-import { IPlaceProps } from "../../@types/types";
+import { categories, places } from "../../../Data";
 
 export default function Home() {
-  const categories = [
-    {
-      name: "All",
-      id: 3,
-    },
-    {
-      name: "Destinations",
-      id: 4,
-    },
-    {
-      name: "Cities",
-      id: 2,
-    },
-    {
-      name: "Experiences",
-      id: 0,
-    },
-  ];
-
-  const places: IPlaceProps[] = [
-    {
-      id: 0,
-      name: "Kome caves",
-      country: "Lesotho",
-      category: "Destinations",
-      image: require("../../../assets/places/1.png"),
-    },
-    {
-      id: 1,
-      name: "table Mountain",
-      country: "South Africa",
-      category: "Experiences",
-      image: require("../../../assets/places/1.png"),
-    },
-    {
-      id: 3,
-      name: "Sehlabathebe National Park",
-      country: "Lesotho",
-      category: "Experiences",
-      image: require("../../../assets/places/4.jpeg"),
-    },
-    {
-      id: 4,
-      name: "UShaka Marine World",
-      country: "South Africa",
-      category: "Experiences",
-      image: require("../../../assets/places/5.jpeg"),
-    },
-    {
-      id: 5,
-      name: "Mount Royal",
-      country: "Lesotho",
-      category: "Cities",
-      image: require("../../../assets/places/6.jpeg"),
-    },
-    {
-      id: 6,
-      name: "Honolulu Game resort",
-      country: "Hawaii",
-      category: "Destination",
-      image: require("../../../assets/places/7.jpeg"),
-    },
-  ];
   const [selectedValue, setSelectedValue] = useState<string>("All");
   return (
     <View style={styles.container}>
@@ -90,7 +27,6 @@ export default function Home() {
         {/* @ts-ignore */}
         <ShowPlaces places={places} category={selectedValue} />
       </Categories>
-      <Text></Text>
     </View>
   );
 }

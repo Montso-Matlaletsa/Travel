@@ -1,37 +1,35 @@
-import { View, Text, ScrollView, ImageBackground } from "react-native";
+import { ScrollView } from "react-native";
 import React, { FC } from "react";
-import { styles } from "./Styles";
-import { Ionicons } from "@expo/vector-icons";
+import { Place } from "../../@types/types";
+import PlaceImageBackground from "../PlaceImageBackground/";
 
 interface ISHowPlaces {
-  places: {
-    id: number;
-    image: string;
-    name: string;
-    country: string;
-    category: string;
-  }[];
+  places: Place[];
   category: string;
 }
+
 export const ShowPlaces: FC<ISHowPlaces> = ({ places, category }) => {
+  const destinations = places.filter(
+    (place) => place.category === "Destinations"
+  );
+
+  const experiences = places.filter(
+    (place) => place.category === "Experiences"
+  );
+
+  const cities = places.filter((place) => place.category === "Cities");
   return (
     <ScrollView horizontal={true}>
-      {places.map((place) => (
-        <ImageBackground
-          //@ts-ignore
-          source={place.image}
-          style={styles.backImage}
-          resizeMode={"cover"}
-          key={place.id}
-          imageStyle={{ borderRadius: 10 }}
-        >
-          <Text style={styles.destination}>{place.name}</Text>
-          <View style={styles.places}>
-            <Ionicons name="location" size={20} color={"white"} />
-            <Text style={styles.placeLabel}>{place.country}</Text>
-          </View>
-        </ImageBackground>
-      ))}
+      {category === "All"
+        ? places.map((place) => <PlaceImageBackground place={place} />)
+        : category === "Destinations"
+        ? destinations.map((place, index) => (
+            <PlaceImageBackground place={place} />
+          ))
+        : category === "Cities"
+        ? cities.map((place) => <PlaceImageBackground place={place} />)
+        : category === "Experiences" &&
+          experiences.map((place) => <PlaceImageBackground place={place} />)}
     </ScrollView>
   );
 };
