@@ -1,4 +1,4 @@
-import { place } from "./src/@types/types";
+import { Place } from "./src/@types/types";
 
 
 export const categories = [
@@ -20,7 +20,7 @@ export const categories = [
     },
   ];
 
-  export const places: place[] = [
+  export const places: Place[] = [
     {
       id: 0,
       name: "Kome caves",

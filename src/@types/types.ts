@@ -22,3 +22,10 @@ export type BottomTabs = {
     country: string
     category: string,
   }
+
+  export const Categories = {
+    DESTINATIONS:'Destinations',
+    All : "All",
+    CITIES: "Cities",
+    EXPERIENCES: "Experiences"
+  }

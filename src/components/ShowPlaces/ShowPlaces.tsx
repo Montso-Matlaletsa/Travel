@@ -1,6 +1,6 @@
 import { ScrollView } from "react-native";
 import React, { FC } from "react";
-import { Place } from "../../@types/types";
+import { Categories, Place } from "../../@types/types";
 import PlaceImageBackground from "../PlaceImageBackground/";
 
 interface ISHowPlaces {
@@ -10,26 +10,32 @@ interface ISHowPlaces {
 
 export const ShowPlaces: FC<ISHowPlaces> = ({ places, category }) => {
   const destinations = places.filter(
-    (place) => place.category === "Destinations"
+    (place) => place.category === Categories.DESTINATIONS
   );
 
   const experiences = places.filter(
-    (place) => place.category === "Experiences"
+    (place) => place.category === Categories.EXPERIENCES
   );
 
-  const cities = places.filter((place) => place.category === "Cities");
+  const cities = places.filter((place) => place.category === Categories.CITIES);
   return (
     <ScrollView horizontal={true}>
-      {category === "All"
-        ? places.map((place) => <PlaceImageBackground place={place} />)
-        : category === "Destinations"
-        ? destinations.map((place, index) => (
-            <PlaceImageBackground place={place} />
+      {category === Categories.All
+        ? places.map((place) => (
+            <PlaceImageBackground place={place} key={place.id} />
           ))
-        : category === "Cities"
-        ? cities.map((place) => <PlaceImageBackground place={place} />)
-        : category === "Experiences" &&
-          experiences.map((place) => <PlaceImageBackground place={place} />)}
+        : category === Categories.DESTINATIONS
+        ? destinations.map((place, index) => (
+            <PlaceImageBackground place={place} key={place.id} />
+          ))
+        : category === Categories.CITIES
+        ? cities.map((place) => (
+            <PlaceImageBackground place={place} key={place.id} />
+          ))
+        : category === Categories.EXPERIENCES &&
+          experiences.map((place) => (
+            <PlaceImageBackground place={place} key={place.id} />
+          ))}
     </ScrollView>
   );
 };
