@@ -1,12 +1,21 @@
 import { ScrollView, Image, View, Text } from "react-native";
-import React from "react";
-import { ActivityList } from "../../../Data";
+import React, { FC } from "react";
 import { styles } from "./Styles";
+import { Activity } from "../../@types/types";
 
-const Activities = () => {
+interface IActivityProps {
+  activities: Activity[];
+}
+
+const Activities: FC<IActivityProps> = ({ activities }) => {
   return (
-    <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-      {ActivityList.map((activity, index) => (
+    <ScrollView
+      style={{ maxHeight: 85 }}
+      horizontal
+      showsHorizontalScrollIndicator={false}
+      contentContainerStyle={{ flexWrap: "wrap" }}
+    >
+      {activities.map((activity, index) => (
         <View style={styles.activityContainer}>
           <Image
             //@ts-ignore
