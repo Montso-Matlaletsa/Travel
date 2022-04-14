@@ -4,7 +4,7 @@ import { styles } from "./style";
 import { Ionicons } from "@expo/vector-icons";
 import Categories from "../../components/Category";
 import ShowPlaces from "../../components/ShowPlaces";
-import { ActivityList, categories, places } from "../../../Data";
+import { ActivityList, categories, MoreImages, places } from "../../../Data";
 import Activities from "../../components/Activities";
 import More from "../../components/More";
 
@@ -20,7 +20,10 @@ export default function Home() {
         />
       </View>
 
-      <ScrollView>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ flexGrow: 1 }}
+      >
         <Text style={styles.title}>Discover</Text>
         <Categories
           categories={categories}
@@ -36,7 +39,7 @@ export default function Home() {
         <Activities activities={ActivityList} />
         <Text style={styles.title}>Learn More</Text>
 
-        <More />
+        <More images={MoreImages} />
       </ScrollView>
     </View>
   );

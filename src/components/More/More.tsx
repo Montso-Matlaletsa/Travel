@@ -1,11 +1,21 @@
-import { View, Text } from "react-native";
-import React from "react";
+import { View, Image, ScrollView } from "react-native";
+import React, { FC } from "react";
+import { image } from "../../@types/types";
+import { styles } from "./Styles";
 
-const More = () => {
+interface IMoreProps {
+  images: image[];
+}
+const More: FC<IMoreProps> = ({ images }) => {
   return (
-    <View>
-      <Text>More</Text>
-    </View>
+    <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+      {images.map((image, index) => (
+        <View style={styles.container}>
+          {/* @ts-ignore */}
+          <Image source={image.image} key={image.id} style={styles.image} />
+        </View>
+      ))}
+    </ScrollView>
   );
 };
 

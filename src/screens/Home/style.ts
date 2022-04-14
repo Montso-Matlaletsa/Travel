@@ -9,7 +9,8 @@ export const styles = StyleSheet.create({
     topBar:{
         flexDirection: 'row',
        height: 50,
-       alignItems: 'center'
+       alignItems: 'center',
+       marginBottom: 5
     },
     icon:{
         textAlignVertical: 'center',
@@ -22,6 +23,6 @@ export const styles = StyleSheet.create({
     title:{
         fontWeight: 'bold',
         fontSize: 25,
-        
+
     }
 })

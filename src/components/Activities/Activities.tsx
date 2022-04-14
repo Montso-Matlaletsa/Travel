@@ -16,7 +16,7 @@ const Activities: FC<IActivityProps> = ({ activities }) => {
       contentContainerStyle={{ flexWrap: "wrap" }}
     >
       {activities.map((activity, index) => (
-        <View style={styles.activityContainer}>
+        <View style={styles.activityContainer} key={activity.id}>
           <Image
             //@ts-ignore
             source={activity.image}
