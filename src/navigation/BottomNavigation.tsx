@@ -16,7 +16,7 @@ function MyTabs() {
     <Tab.Navigator
       screenOptions={({ route }) => ({
         headerShown: false,
-        tabBarStyle: { borderTopLeftRadius: 60 },
+        tabBarStyle: { borderRadius: 20 },
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
 
@@ -34,6 +34,7 @@ function MyTabs() {
         },
         tabBarActiveTintColor: "tomato",
         tabBarInactiveTintColor: "gray",
+        tabBarShowLabel: false,
       })}
     >
       <Tab.Screen name={"Home"} component={Home} />
