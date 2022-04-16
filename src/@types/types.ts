@@ -13,6 +13,16 @@ export type BottomTabs = {
     Profile: undefined;
 }
 
+export type RootStackProps={
+    BottomTabs: BottomTabs;
+    ViewPlace: {place_id: number};
+}
+
+export const StackNavigation= {
+    BOTTOM_TABS:'BottomTabs',
+    VIEW_PLACE: "ViewPlace",
+  }
+
 
   
   export type Place = {  
@@ -21,6 +31,10 @@ export type BottomTabs = {
     name: string,
     country: string
     category: string,
+    description: string,
+    rating: number,
+    price: number,
+    duration: number
   }
 
   export const Categories = {

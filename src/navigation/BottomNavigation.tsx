@@ -1,17 +1,14 @@
-import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import React from "react";
 import Favorites from "../screens/Favorites";
 import Home from "../screens/Home";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { BottomNavProps } from "../../types";
 import Profile from "../screens/Profile";
 import { Ionicons } from "@expo/vector-icons";
-import { Animated } from "react-native";
 import { BottomTabs } from "../@types/types";
 
 const Tab = createBottomTabNavigator<BottomTabs>();
 
-function MyTabs() {
+function BottomTab() {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -48,4 +45,4 @@ function MyTabs() {
   );
 }
 
-export default MyTabs;
+export default BottomTab;

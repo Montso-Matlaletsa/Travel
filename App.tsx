@@ -1,12 +1,11 @@
 import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
-import { StyleSheet } from "react-native";
-import MyTabs from "./src/navigation/BottomNavigation";
+import RootStack from "./src/navigation/RootStack";
 
 export default function App() {
   return (
     <NavigationContainer>
-      <MyTabs />
+      <RootStack />
     </NavigationContainer>
   );
 }
